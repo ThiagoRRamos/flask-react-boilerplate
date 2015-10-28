@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="row whole-height" id="root">
+</div>
+<script>
+{% if props is defined %}
+require(['react', 'components/{{component}}'], function(React, Component) {
+	React.render(React.createElement(Component, {{props|tojson}}), document.getElementById('root'));
+});
+{% else %}
+require(['react', 'components/{{component}}'], function(React, Component) {
+	React.render(React.createElement(Component, null), document.getElementById('root'));
+});
+{% endif %}
+</script>
+{% endblock %}

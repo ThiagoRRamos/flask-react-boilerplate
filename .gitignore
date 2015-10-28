@@ -1,0 +1,5 @@
+__pycache__/
+static/js
+static/v
+node_modules/
+woohoo.db
